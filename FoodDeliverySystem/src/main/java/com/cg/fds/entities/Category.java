@@ -9,16 +9,19 @@ import javax.persistence.Id;
 public class Category {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String catId;
+	private int catId;
 	
 	private String categoryName;
 
 	//CONSTRUCTOR
+	public Category() {
+		
+	}
 	/**
 	 * @param catId
 	 * @param categoryName
 	 */
-	public Category(String catId, String categoryName) {
+	public Category(int catId, String categoryName) {
 		super();
 		this.catId = catId;
 		this.categoryName = categoryName;
@@ -28,14 +31,14 @@ public class Category {
 	/**
 	 * @return the catId
 	 */
-	public String getCatId() {
+	public int getCatId() {
 		return catId;
 	}
 
 	/**
 	 * @param catId the catId to set
 	 */
-	public void setCatId(String catId) {
+	public void setCatId(int catId) {
 		this.catId = catId;
 	}
 

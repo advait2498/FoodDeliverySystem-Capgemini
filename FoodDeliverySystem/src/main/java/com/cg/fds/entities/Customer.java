@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public class Customer {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String customerId;
+	private int customerId;
 	private String firstName;
 	private String lastName;
 	private String gender;
@@ -141,7 +141,7 @@ public class Customer {
 	/**
 	 * @return the customerId
 	 */
-	public String getCustomerId() {
+	public int getCustomerId() {
 		return customerId;
 	}
 }

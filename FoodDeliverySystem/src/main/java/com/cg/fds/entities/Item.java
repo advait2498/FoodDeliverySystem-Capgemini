@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 public class Item {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String itemId;
+	private int itemId;
 	private String itemName;
 	
 	@OneToOne
@@ -29,7 +29,9 @@ public class Item {
 	private List<Restaurant> restaurants = new ArrayList<>();
 	
 	//CONSTRUCTOR
-	
+	public Item() {
+		
+	}
 	/**
 	 * @param itemId
 	 * @param itemName
@@ -38,7 +40,7 @@ public class Item {
 	 * @param cost
 	 * @param restaurants
 	 */
-	public Item(String itemId, String itemName, Category category, int quantity, double cost,
+	public Item(int itemId, String itemName, Category category, int quantity, double cost,
 			List<Restaurant> restaurants) {
 		super();
 		this.itemId = itemId;
@@ -53,13 +55,13 @@ public class Item {
 	/**
 	 * @return the itemId
 	 */
-	public String getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 	/**
 	 * @param itemId the itemId to set
 	 */
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 	/**

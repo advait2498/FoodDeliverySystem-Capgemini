@@ -15,14 +15,14 @@ import javax.persistence.OneToOne;
 public class FoodCart {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String cartId;
+	private int cartId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id", referencedColumnName = "customerId")
 	private Customer customer;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Item> itemList;
+	private List<Item> items;
 	
 	//CONSTRUCTORS
 	//default constructor
@@ -36,11 +36,11 @@ public class FoodCart {
 	 * @param customer
 	 * @param itemList
 	 */
-	public FoodCart(String cartId, Customer customer, List<Item> itemList) {
+	public FoodCart(int cartId, Customer customer, List<Item> itemList) {
 		super();
 		this.cartId = cartId;
 		this.customer = customer;
-		this.itemList = itemList;
+		this.items = itemList;
 	}
 	//SETTER-GETTER
 
@@ -62,20 +62,20 @@ public class FoodCart {
 	 * @return the itemList
 	 */
 	public List<Item> getItemList() {
-		return itemList;
+		return items;
 	}
 
 	/**
 	 * @param itemList the itemList to set
 	 */
 	public void setItemList(List<Item> itemList) {
-		this.itemList = itemList;
+		this.items = itemList;
 	}
 
 	/**
 	 * @return the cartId
 	 */
-	public String getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
 	

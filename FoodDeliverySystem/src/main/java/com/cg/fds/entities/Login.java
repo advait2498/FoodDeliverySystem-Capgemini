@@ -8,17 +8,21 @@ import javax.persistence.Id;
 @Entity
 public class Login {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String userid;
+	private int userid;
 	private String userName;
 	private String password;
 	
 	//CONSTRUCTOR
+	public Login() {
+		
+	}
+	
 	/**
 	 * @param userid
 	 * @param userName
 	 * @param password
 	 */
-	public Login(String userid, String userName, String password) {
+	public Login(int userid, String userName, String password) {
 		super();
 		this.userid = userid;
 		this.userName = userName;
@@ -29,13 +33,13 @@ public class Login {
 	/**
 	 * @return the userid
 	 */
-	public String getUserid() {
+	public int getUserid() {
 		return userid;
 	}
 	/**
 	 * @param userid the userid to set
 	 */
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 	/**

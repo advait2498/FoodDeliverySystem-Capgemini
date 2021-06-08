@@ -22,6 +22,9 @@ public class OrderDetails {
 	private String orderStatus;
 	
 	//CONSTRUCTOR
+	public OrderDetails() {
+		
+	}
 	/**
 	 * @param orderId
 	 * @param orderDate

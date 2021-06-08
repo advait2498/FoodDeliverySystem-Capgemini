@@ -17,7 +17,7 @@ import javax.persistence.JoinTable;
 public class Restaurant {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private String restaurantId;
+	private int restaurantId;
 	private String restaurantName;
 	
 	@OneToOne
@@ -35,6 +35,9 @@ public class Restaurant {
 	private String contactNumber;
 	
 	//CONSTRUCTORS
+	public Restaurant() {
+		
+	}
 	/**
 	 * @param restaurantId
 	 * @param restaurantName
@@ -43,7 +46,7 @@ public class Restaurant {
 	 * @param managerName
 	 * @param contactNumber
 	 */
-	public Restaurant(String restaurantId, String restaurantName, Address address, List<Item> itemList,
+	public Restaurant(int restaurantId, String restaurantName, Address address, List<Item> itemList,
 			String managerName, String contactNumber) {
 		super();
 		this.restaurantId = restaurantId;
@@ -58,14 +61,14 @@ public class Restaurant {
 	/**
 	 * @return the restaurantId
 	 */
-	public String getRestaurantId() {
+	public int getRestaurantId() {
 		return restaurantId;
 	}
 
 	/**
 	 * @param restaurantId the restaurantId to set
 	 */
-	public void setRestaurantId(String restaurantId) {
+	public void setRestaurantId(int restaurantId) {
 		this.restaurantId = restaurantId;
 	}
 
