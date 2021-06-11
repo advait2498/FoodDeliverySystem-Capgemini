@@ -14,12 +14,20 @@ public interface IItemRepository extends CrudRepository<Item, Integer>{
 
 	//public Item addItem(Item item);
 	public Item findByItemId(int id);
+	public Item findByItemName(String name);
 	//public Item updateItem(Item item);
 	//public Item removeItem(String id);
-	//@Query("select i.itemList from ITEM i where i.itemId IN(select ri.itemId from RESTAURANT_ITEMS ri where ri.restaurantId IN(select r.restaurantId from RESTAURANT r where r.restaurantName = :name))")
-	//public List<Item> findItemListByRestaurant(@Param("name") Restaurant res);
+	
+	@Query("select r.itemList from Restaurant r where r.restaurantName = :name")
+	public List<Item> findItemListByRestaurant(@Param("name") Restaurant res);
 	public List<Item> findByCategory(Category cat);
 	//public List<Item> findByItemName(String name);
-	public List<Restaurant> findByItemName(String name);
+	@Query("select i.restaurantList from Item i where i.itemName = :name")
+	public List<Restaurant> findRestaurantsByItemName(@Param("name") String name);
+	
+	public List<Item> findByCostBetween(@Param("minPrice")double minCost,@Param("maxPrice")double maxCost);
+	
+	@Query("select i from Item i where i.category = : category")
+	public List<Item> searchByCategory(@Param("category") Category cat);
 	
 }

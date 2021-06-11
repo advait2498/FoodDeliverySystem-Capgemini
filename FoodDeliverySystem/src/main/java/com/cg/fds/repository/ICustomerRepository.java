@@ -12,7 +12,8 @@ public interface ICustomerRepository extends CrudRepository<Customer, Integer>{
 //	public Customer addCustomer(Customer customer);
 	//public Customer updateCustomer(Customer customer);
 	//public Customer deleteCustomer(Customer customer);
-	public Customer findCustomerByCustomerId(int id);
+	public Customer findByCustomerId(int id);
+	public Customer findByFirstName(String name);
 	//public List<Customer> viewAllCustomer(String restaurantname); 
 	
 }

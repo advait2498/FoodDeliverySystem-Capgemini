@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.fds.entities.Customer;
 import com.cg.fds.entities.OrderDetails;
@@ -19,6 +21,8 @@ import com.cg.fds.service.IOrderService;
  * @author advai
  *
  */
+@Service
+@Transactional
 public class OrderServiceImpl implements IOrderService{
 
 	@Autowired
@@ -48,8 +52,9 @@ public class OrderServiceImpl implements IOrderService{
 		return repository.updateOrderCart(order.getCart(), order.getOrderId());
 	}
 
+	
 	@Override
-	public OrderDetails removeOrder(OrderDetails order) {
+	public OrderDetails removeOrder(OrderDetails order, int orderId) {
 		// TODO Auto-generated method stub
 		Optional<OrderDetails> isOrderAvailable = repository.findById(order.getOrderId());
 		if(isOrderAvailable.isPresent()) {
@@ -61,9 +66,14 @@ public class OrderServiceImpl implements IOrderService{
 	}
 
 	@Override
-	public OrderDetails viewOrder(OrderDetails order) {
+	public OrderDetails viewOrder(int id) {
 		// TODO Auto-generated method stub
-		return repository.findByOrderId(order.getOrderId());
+		Optional<OrderDetails> isOrderAvailable = repository.findById(id);
+		if(isOrderAvailable.isPresent()) {
+			return isOrderAvailable.get();
+		}else {
+			throw new OrderNotFoundException("Order not found. ");
+		}
 	}
 
 	@Override
@@ -76,6 +86,18 @@ public class OrderServiceImpl implements IOrderService{
 	public List<OrderDetails> viewAllOrders(Customer customer) {
 		// TODO Auto-generated method stub
 		return (List<OrderDetails>) repository.findAll();
+	}
+
+	@Override
+	public OrderDetails updateOrder(OrderDetails order, int orderId) {
+		// TODO Auto-generated method stub
+		Optional<OrderDetails> isOrderAvailable = repository.findById(orderId);
+		if(isOrderAvailable.isPresent()) {
+			repository.save(order);
+			return order;
+		}else {
+			throw new OrderNotFoundException("Order not found. ");
+		}
 	}
 
 }

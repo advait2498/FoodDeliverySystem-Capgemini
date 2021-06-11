@@ -12,8 +12,9 @@ import com.cg.fds.entities.Customer;
 public interface ICustomerService {
 
 	public Customer addCustomer(Customer customer);
-	public Customer updateCustomer(Customer customer);
-	public Customer removeCustomer(Customer customer);
-	public Customer viewCustomer(int id );
-	public List<Customer> viewAllCustomer(String restaurantname); 
+	public Customer updateCustomer(int customerId);
+	public Customer removeCustomer(int customerId);
+	public Customer viewCustomer(int customerId);
+	//public List<Customer> viewAllCustomer(String restaurantname);
+	public List<Customer> viewAllCustomer(); 
 }

@@ -99,4 +99,48 @@ public class Bill {
 	public void setBillDate(LocalDateTime billDate) {
 		this.billDate = billDate;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((billDate == null) ? 0 : billDate.hashCode());
+		result = prime * result + billId;
+		result = prime * result + ((order == null) ? 0 : order.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(totalCost);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + totalItem;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bill other = (Bill) obj;
+		if (billDate == null) {
+			if (other.billDate != null)
+				return false;
+		} else if (!billDate.equals(other.billDate))
+			return false;
+		if (billId != other.billId)
+			return false;
+		if (order == null) {
+			if (other.order != null)
+				return false;
+		} else if (!order.equals(other.order))
+			return false;
+		if (Double.doubleToLongBits(totalCost) != Double.doubleToLongBits(other.totalCost))
+			return false;
+		if (totalItem != other.totalItem)
+			return false;
+		return true;
+	}
+	
+	
 }

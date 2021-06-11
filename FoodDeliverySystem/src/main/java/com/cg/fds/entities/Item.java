@@ -124,4 +124,50 @@ public class Item {
 	public void setRestaurants(List<Restaurant> restaurants) {
 		this.restaurants = restaurants;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(cost);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + itemId;
+		result = prime * result + ((itemName == null) ? 0 : itemName.hashCode());
+		result = prime * result + quantity;
+		result = prime * result + ((restaurants == null) ? 0 : restaurants.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		if (category == null) {
+			if (other.category != null)
+				return false;
+		} else if (!category.equals(other.category))
+			return false;
+		if (Double.doubleToLongBits(cost) != Double.doubleToLongBits(other.cost))
+			return false;
+		if (itemId != other.itemId)
+			return false;
+		if (itemName == null) {
+			if (other.itemName != null)
+				return false;
+		} else if (!itemName.equals(other.itemName))
+			return false;
+		if (quantity != other.quantity)
+			return false;
+		if (restaurants == null) {
+			if (other.restaurants != null)
+				return false;
+		} else if (!restaurants.equals(other.restaurants))
+			return false;
+		return true;
+	}
 }

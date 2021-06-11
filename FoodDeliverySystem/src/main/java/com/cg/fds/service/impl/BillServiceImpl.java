@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.fds.entities.Bill;
 import com.cg.fds.exception.NoBillFoundException;
@@ -19,6 +21,8 @@ import com.cg.fds.service.IBillService;
  * @author advai
  *
  */
+@Service
+@Transactional
 public class BillServiceImpl implements IBillService {
 	
 	@Autowired

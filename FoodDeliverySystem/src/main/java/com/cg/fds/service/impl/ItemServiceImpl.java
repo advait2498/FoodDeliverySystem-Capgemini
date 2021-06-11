@@ -6,6 +6,8 @@ package com.cg.fds.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.fds.entities.Category;
 import com.cg.fds.entities.Item;
@@ -22,6 +24,8 @@ import javax.persistence.Query;
  * @author advai
  *
  */
+@Service
+@Transactional
 public class ItemServiceImpl implements IItemService {
 
 	@Autowired
@@ -37,30 +41,37 @@ public class ItemServiceImpl implements IItemService {
 	}
 
 	@Override
-	public Item viewItem(String id) {
+	public Item viewItem(int id) {
 		// TODO Auto-generated method stub
-		return repository.findByItemId(Integer.parseInt(id));
+		Optional<Item> isItemAvailable = repository.findById(id);
+		if(isItemAvailable.isPresent())
+			return isItemAvailable.get();
+		else
+			throw new ItemNotFoundException("Item not found");
 	}
 
 	@Override
-	public Item updateItem(Item item) {
+	public Item updateItem(int id, Item item) {
 		// TODO Auto-generated method stub
-		Optional<Item> isItemAvailable = repository.findById(item.getItemId());
+		Optional<Item> isItemAvailable = repository.findById(id);
 		if(isItemAvailable.isPresent()) {
-			return isItemAvailable.get();
+			repository.save(item);
+			return item;
 		}else {
 			throw new ItemNotFoundException("Item not found");
 		}
 	}
 
 	@Override
-	public void removeItem(String id) {
-		// TODO Auto-generated method stub
-		Optional<Item> isItemAvailable = repository.findById(Integer.parseInt(id));
-		if(isItemAvailable.isPresent())
-			repository.delete(isItemAvailable.get());
-		else
-			throw new ItemNotFoundException("Item not found");
+    public Item removeItem(int id,Item item) {
+        // TODO Auto-generated method stub
+        Optional<Item> isItemAvailable = repository.findById(id);
+        if(isItemAvailable.isPresent()) {
+            repository.delete(item);
+        	return item;
+		}
+        else
+            throw new ItemNotFoundException("Item not found");
 	}
 
 	@Override
@@ -79,6 +90,34 @@ public class ItemServiceImpl implements IItemService {
 	public List<Item> viewAllItemsByName(String name) {
 		// TODO Auto-generated method stub
 		return (List<Item>) repository.findAll();
+	}
+
+	public List<Restaurant> findRestaurantsByItemName(String itemName) {
+		// TODO Auto-generated method stub
+		return repository.findRestaurantsByItemName(itemName);
+	}
+
+	@Override
+	public Item updateItem(String itemName) {
+		// TODO Auto-generated method stub
+		return repository.findByItemName(itemName);
+	}
+	
+	@Override
+	public Item viewItem(String name) {
+		return repository.findByItemName(name);
+	}
+
+	@Override
+	public List<Item> searchByPriceBetween(double minPrice, double maxPrice) {
+		// TODO Auto-generated method stub
+		return repository.findByCostBetween(minPrice, maxPrice);
+	}
+
+	@Override
+	public List<Item> searchByCategory(Category cat) {
+		// TODO Auto-generated method stub
+		return repository.searchByCategory(cat);
 	}
 
 }
