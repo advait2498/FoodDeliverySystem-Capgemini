@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.controllers;
+package com.capgemini.fds.controller;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -23,19 +20,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
-import com.cg.fds.service.impl.CustomerCartImpl;
-import com.cg.fds.service.impl.CustomerServiceImpl;
-import com.cg.fds.service.impl.ItemServiceImpl;
-import com.cg.fds.service.impl.OrderServiceImpl;
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.FoodCart;
-import com.cg.fds.entities.Item;
-import com.cg.fds.entities.OrderDetails;
+import com.capgemini.fds.service.impl.CustomerCartImpl;
+import com.capgemini.fds.service.impl.CustomerServiceImpl;
+import com.capgemini.fds.service.impl.ItemServiceImpl;
+import com.capgemini.fds.service.impl.OrderServiceImpl;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.FoodCart;
+import com.capgemini.fds.entities.Item;
+import com.capgemini.fds.entities.OrderDetails;
 
-/**
- * @author advai
- *
- */
 @RestController
 @RequestMapping("/{id}")
 public class CustomerController {

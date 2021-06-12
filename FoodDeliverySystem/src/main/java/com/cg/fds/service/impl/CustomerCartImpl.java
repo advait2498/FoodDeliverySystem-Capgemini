@@ -1,26 +1,19 @@
-/**
- * 
- */
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.FoodCart;
-import com.cg.fds.entities.Item;
-import com.cg.fds.exception.EmptyCartException;
-import com.cg.fds.exception.ItemNotFoundInCart;
-import com.cg.fds.repository.ICartRepository;
-import com.cg.fds.service.ICartService;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.FoodCart;
+import com.capgemini.fds.entities.Item;
+import com.capgemini.fds.exception.EmptyCartException;
+import com.capgemini.fds.exception.ItemNotFoundInCart;
+import com.capgemini.fds.repository.ICartRepository;
+import com.capgemini.fds.service.ICartService;
 
 import java.util.List;
 
-/**
- * @author advai
- *
- */
 @Service
 @Transactional
 public class CustomerCartImpl implements ICartService {

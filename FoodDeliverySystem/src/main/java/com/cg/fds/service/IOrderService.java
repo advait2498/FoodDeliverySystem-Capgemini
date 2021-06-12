@@ -1,10 +1,10 @@
-package com.cg.fds.service;
+package com.capgemini.fds.service;
 
 import java.util.List;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.OrderDetails;
-import com.cg.fds.entities.Restaurant;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.OrderDetails;
+import com.capgemini.fds.entities.Restaurant;
 
 
 public interface IOrderService {

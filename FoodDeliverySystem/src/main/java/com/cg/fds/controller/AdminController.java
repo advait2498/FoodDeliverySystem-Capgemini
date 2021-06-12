@@ -1,9 +1,9 @@
-package com.cg.fds.controllers;
-import com.cg.fds.entities.*;
-import com.cg.fds.service.ICustomerService;
-import com.cg.fds.service.IItemService;
-import com.cg.fds.service.IOrderService;
-import com.cg.fds.service.IRestaurantService;
+package com.capgemini.fds.controller;
+import com.capgemini.fds.entities.*;
+import com.capgemini.fds.service.ICustomerService;
+import com.capgemini.fds.service.IItemService;
+import com.capgemini.fds.service.IOrderService;
+import com.capgemini.fds.service.IRestaurantService;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -47,7 +47,7 @@ public class AdminController {
 		return restaurantListEntity;
 	}
 	
-
+	
 	@GetMapping("/restaurants/{location}")
 	public RestaurantListEntity getNearByRestaurant(@PathVariable("location") String location){
 		RestaurantListEntity restaurantListEntity =new RestaurantListEntity();
@@ -94,11 +94,19 @@ public class AdminController {
         }
         return ResponseEntity.badRequest().body(response);
 	}
+	
+	
 	// ITEMS ENDPOINTS
+	
 	@GetMapping("/restaurants/{restaurantName}/items/{itemName}")
-	public ResponseEntity<Item> viewItemByRestaurantName(@PathVariable("restaurantName") String restaurantName, @RequestBody Item item){
-		Restaurant restaurant = restaurantService.viewRestaurant(restaurantName);
-		return null;
+	public ResponseEntity<Item> viewItemByRestaurantName(@PathVariable("restaurantName") String restaurantName, @RequestBody String item){
+		Item response = itemService.viewItems(item);
+		if(response.getItemName().equals(item))
+		{
+			return ResponseEntity.ok().body(response);
+		}
+		return ResponseEntity.badRequest().body(response);
+		
 	}
 	
 	@PostMapping("/restaurants/{restaurantName}/")
@@ -120,13 +128,21 @@ public class AdminController {
 	
 	@DeleteMapping("/restaurants/{restaurantName}/items/{itemName}")
 	public ResponseEntity<Item> updateItemByRestaurantName(@PathVariable("restaurantName") String restaurantName, @RequestBody String itemName){
-		Item item = itemService.viewItem(itemName);
+		Item item = itemService.viewItems(itemName);
 		Item response = itemService.removeItem(item.getItemId(), item);
 		if(response.getItemName().equals(itemName)) {
             return ResponseEntity.ok().body(response);
         }
         return ResponseEntity.badRequest().body(response);
 	}
+	
+	@GetMapping("/restaurants/{restaurantName}/itemList")
+	public ItemListEntity getAllItems(@PathVariable("restaurantName") String restaurantName)
+	{
+		ItemListEntity itemListEntity = new ItemListEntity();
+		itemListEntity.setItemList(itemService.findItemListByRestaurant(restaurantName));
+		return itemListEntity;
+	}	
 	
 	//CUSTOMER ENDPOINTS
 	

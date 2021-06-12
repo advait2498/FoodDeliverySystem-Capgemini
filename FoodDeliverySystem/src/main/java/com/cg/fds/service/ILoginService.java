@@ -1,9 +1,9 @@
-package com.cg.fds.service;
+package com.capgemini.fds.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Login;
+import com.capgemini.fds.entities.Login;
 
 @Service
 @Transactional

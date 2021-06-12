@@ -1,13 +1,13 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.cg.fds.entities.Category;
-import com.cg.fds.entities.Item;
-import com.cg.fds.entities.Restaurant;
+import com.capgemini.fds.entities.Category;
+import com.capgemini.fds.entities.Item;
+import com.capgemini.fds.entities.Restaurant;
 
 public interface IRestaurantRepository extends CrudRepository<Restaurant, Integer>{
 

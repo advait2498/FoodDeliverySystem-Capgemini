@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import java.util.List;
 
@@ -9,20 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Category;
-import com.cg.fds.entities.Item;
-import com.cg.fds.entities.Restaurant;
-import com.cg.fds.exception.ItemNotFoundException;
-import com.cg.fds.exception.RestaurantNotFoundException;
-import com.cg.fds.repository.IItemRepository;
-import com.cg.fds.repository.IRestaurantRepository;
-import com.cg.fds.service.IRestaurantService;
+import com.capgemini.fds.entities.Category;
+import com.capgemini.fds.entities.Item;
+import com.capgemini.fds.entities.Restaurant;
+import com.capgemini.fds.exception.ItemNotFoundException;
+import com.capgemini.fds.exception.RestaurantNotFoundException;
+import com.capgemini.fds.repository.IItemRepository;
+import com.capgemini.fds.repository.IRestaurantRepository;
+import com.capgemini.fds.service.IRestaurantService;
 import java.util.Optional;
 
-/**
- * @author advai
- *
- */
 @Service
 @Transactional
 public class RestaurantServiceImpl implements IRestaurantService {

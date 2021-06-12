@@ -1,6 +1,6 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
-import com.cg.fds.entities.Login;
+import com.capgemini.fds.entities.Login;
 
 public interface ILoginRepository {
 	

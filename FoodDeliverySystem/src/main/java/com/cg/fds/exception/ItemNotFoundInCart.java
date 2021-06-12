@@ -1,12 +1,5 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
 public class ItemNotFoundInCart extends RuntimeException{
 	
 	public ItemNotFoundInCart(String message) {

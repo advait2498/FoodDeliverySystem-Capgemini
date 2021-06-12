@@ -1,4 +1,4 @@
-package com.cg.fds.controllers;
+package com.capgemini.fds.controller;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;

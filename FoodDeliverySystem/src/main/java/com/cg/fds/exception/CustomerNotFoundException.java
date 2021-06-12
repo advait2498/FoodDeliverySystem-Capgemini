@@ -1,12 +1,5 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
 public class CustomerNotFoundException extends RuntimeException{
 	//passing message to RuntimeException
 	public CustomerNotFoundException(String message) {

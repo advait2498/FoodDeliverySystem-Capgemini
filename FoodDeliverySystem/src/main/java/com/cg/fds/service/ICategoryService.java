@@ -1,11 +1,11 @@
-package com.cg.fds.service;
+package com.capgemini.fds.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Category;
+import com.capgemini.fds.entities.Category;
 
 @Service
 @Transactional
@@ -18,3 +18,4 @@ public interface ICategoryService {
 	public List<Category> viewAllCategory();
 	public Category searchByCategoryName(String name);
 }
+

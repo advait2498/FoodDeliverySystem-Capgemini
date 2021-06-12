@@ -1,4 +1,4 @@
-package com.cg.fds;
+package com.capgemini.fds;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
@@ -14,9 +14,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.cg.fds.entities.Category;
-import com.cg.fds.repository.ICategoryRepository;
-import com.cg.fds.service.impl.CategoryServiceImpl;
+import com.capgemini.fds.entities.Category;
+import com.capgemini.fds.repository.ICategoryRepository;
+import com.capgemini.fds.repository.IItemRepository;
+import com.capgemini.fds.service.impl.CategoryServiceImpl;
 
 @SpringBootTest
 class CategoryTest {
@@ -24,6 +25,8 @@ class CategoryTest {
 	private CategoryServiceImpl iCategoryService;
 	@Mock
 	private ICategoryRepository iCategoryRepository;
+	@Mock
+	private IItemRepository iRepository;
 
 	@Test
 	public void addCategoryTest() {
@@ -44,22 +47,21 @@ class CategoryTest {
 	@Test 
 	public void updateCategoryTest() throws Exception
 	{ 
-		addCategoryTest();
-		Category expCategory = new Category(1, "Italian");
-		Mockito.when(iCategoryRepository.findById(1)).thenReturn(Optional.of(expCategory));
+		Category expCategory = new Category(2, "South Indian");
+		Mockito.when(iCategoryRepository.findById(2)).thenReturn(Optional.of(expCategory));
 	  
 		Category actCategory = iCategoryService.updateCategory(expCategory);
 		assertEquals(actCategory.getCategoryName(), expCategory.getCategoryName());
 		verify(iCategoryRepository,times(1)).save(expCategory); 
 	}
 	  
-//	@Test 
-//	public void removeCategoryTest() throws Exception
-//	{
-//		Category expCategory = new Category(1, "Starters");
-//		iCategoryRepository.delete(expCategory);
-//		verify(iCategoryRepository,times(1)).delete(expCategory);;
-//	}
+	@Test 
+	public void removeCategoryTest() throws Exception
+	{
+		Category expCategory = new Category(1, "Starters");
+		iCategoryRepository.delete(expCategory);
+		verify(iCategoryRepository,times(1)).delete(expCategory);
+	}
 	
 	@Test
 	public void viewCategoryTest() throws Exception
@@ -97,7 +99,4 @@ class CategoryTest {
 		assertEquals(expCatList.size(), actCatList.size());
 		verify(iCategoryRepository,times(1)).findAll();
 	}
-	  
-	  
-	 
 }

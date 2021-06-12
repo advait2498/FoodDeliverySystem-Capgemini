@@ -1,11 +1,11 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import java.util.List;
 
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.cg.fds.entities.Customer;
+import com.capgemini.fds.entities.Customer;
 
 public interface ICustomerRepository extends CrudRepository<Customer, Integer>{
 

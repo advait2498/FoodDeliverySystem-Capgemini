@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.controllers;
+package com.capgemini.fds.controller;
 
 import java.util.List;
 
@@ -13,17 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.fds.entities.Category;
-import com.cg.fds.entities.Item;
-import com.cg.fds.entities.Restaurant;
-import com.cg.fds.service.ICategoryService;
-import com.cg.fds.service.IItemService;
-import com.cg.fds.service.IRestaurantService;
+import com.capgemini.fds.entities.Category;
+import com.capgemini.fds.entities.Item;
+import com.capgemini.fds.entities.Restaurant;
+import com.capgemini.fds.service.ICategoryService;
+import com.capgemini.fds.service.IItemService;
+import com.capgemini.fds.service.IRestaurantService;
 
-/**
- * @author advai
- *
- */
+
 @RestController
 public class ApplicationController {
 	

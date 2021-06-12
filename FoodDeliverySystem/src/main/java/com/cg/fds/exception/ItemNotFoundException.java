@@ -1,15 +1,9 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
-public class ItemNotFoundException extends RuntimeException{
-
-	public ItemNotFoundException(String message) {
-		super(message);
+public class ItemNotFoundException extends RuntimeException 
+{
+	public ItemNotFoundException(String msg) {
+		super(msg);
 	}
+
 }

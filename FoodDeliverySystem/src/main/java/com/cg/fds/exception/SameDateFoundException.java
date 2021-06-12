@@ -1,12 +1,5 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
 public class SameDateFoundException extends RuntimeException {
 	public SameDateFoundException(String message) {
 		super(message);

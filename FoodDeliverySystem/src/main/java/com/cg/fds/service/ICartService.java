@@ -1,11 +1,11 @@
-package com.cg.fds.service;
+package com.capgemini.fds.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.FoodCart;
-import com.cg.fds.entities.Item;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.FoodCart;
+import com.capgemini.fds.entities.Item;
 
 @Service
 @Transactional

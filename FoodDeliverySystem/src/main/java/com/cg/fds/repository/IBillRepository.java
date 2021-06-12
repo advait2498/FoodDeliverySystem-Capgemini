@@ -1,4 +1,4 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.cg.fds.entities.Bill;
+import com.capgemini.fds.entities.Bill;
 
 public interface IBillRepository extends CrudRepository<Bill, Integer> {
 

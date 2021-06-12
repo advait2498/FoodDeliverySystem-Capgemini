@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,16 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Bill;
-import com.cg.fds.exception.NoBillFoundException;
-import com.cg.fds.exception.SameDateFoundException;
-import com.cg.fds.repository.IBillRepository;
-import com.cg.fds.service.IBillService;
+import com.capgemini.fds.entities.Bill;
+import com.capgemini.fds.exception.NoBillFoundException;
+import com.capgemini.fds.exception.SameDateFoundException;
+import com.capgemini.fds.repository.IBillRepository;
+import com.capgemini.fds.service.IBillService;
 
-/**
- * @author advai
- *
- */
 @Service
 @Transactional
 public class BillServiceImpl implements IBillService {

@@ -1,11 +1,11 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.FoodCart;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.FoodCart;
 
 public interface ICartRepository extends CrudRepository<FoodCart, Integer>{
 

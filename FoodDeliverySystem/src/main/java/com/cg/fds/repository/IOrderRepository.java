@@ -1,4 +1,4 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.FoodCart;
-import com.cg.fds.entities.OrderDetails;
-import com.cg.fds.entities.Restaurant;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.FoodCart;
+import com.capgemini.fds.entities.OrderDetails;
+import com.capgemini.fds.entities.Restaurant;
 
 public interface IOrderRepository extends CrudRepository<OrderDetails, Integer>{
 

@@ -1,12 +1,5 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
 public class EmptyCartException extends RuntimeException{
 	public EmptyCartException(String message) {
 		super(message);

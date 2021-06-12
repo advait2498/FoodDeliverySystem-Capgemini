@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.entities;
+package com.capgemini.fds.entities;
 
 import java.util.List;
 
@@ -10,10 +7,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author advai
- *
- */
 @XmlRootElement(name = "categories")
 public class CategoryListEntity {
 	@JsonProperty("categories")	

@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import java.util.List;
 
@@ -9,24 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Category;
-import com.cg.fds.exception.CategoryNotFoundException;
-import com.cg.fds.repository.ICategoryRepository;
-import com.cg.fds.service.ICategoryService;
+import com.capgemini.fds.entities.Category;
+import com.capgemini.fds.exception.CategoryNotFoundException;
+import com.capgemini.fds.repository.ICategoryRepository;
+import com.capgemini.fds.service.ICategoryService;
 
-/**
- * @author advai
- *
- */
 @Service
 @Transactional
 public class CategoryServiceImpl implements ICategoryService {
 
 	@Autowired
 	ICategoryRepository repository;
-	/**
-	 * 
-	 */
+	
 	public CategoryServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -83,13 +74,11 @@ public class CategoryServiceImpl implements ICategoryService {
 
 	@Override
 	public List<Category> viewAllCategory() {
-		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
 
 	@Override
 	public Category searchByCategoryName(String name) {
-		// TODO Auto-generated method stub
 		return repository.findByCategoryName(name);
 	}
 

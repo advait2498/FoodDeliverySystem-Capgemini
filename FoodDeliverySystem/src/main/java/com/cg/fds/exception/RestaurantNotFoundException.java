@@ -1,17 +1,7 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
 public class RestaurantNotFoundException extends RuntimeException {
 
-	/**
-	 * @param message
-	 */
 	public RestaurantNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub

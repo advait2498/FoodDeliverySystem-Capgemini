@@ -1,10 +1,10 @@
-package com.cg.fds.repository;
+package com.capgemini.fds.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.cg.fds.entities.Category;
+import com.capgemini.fds.entities.Category;
 
 public interface ICategoryRepository extends CrudRepository<Category, Integer>{
 

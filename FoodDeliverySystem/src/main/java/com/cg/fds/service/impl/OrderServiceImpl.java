@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,17 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.entities.OrderDetails;
-import com.cg.fds.entities.Restaurant;
-import com.cg.fds.exception.OrderNotFoundException;
-import com.cg.fds.repository.IOrderRepository;
-import com.cg.fds.service.IOrderService;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.entities.OrderDetails;
+import com.capgemini.fds.entities.Restaurant;
+import com.capgemini.fds.exception.OrderNotFoundException;
+import com.capgemini.fds.repository.IOrderRepository;
+import com.capgemini.fds.service.IOrderService;
 
-/**
- * @author advai
- *
- */
 @Service
 @Transactional
 public class OrderServiceImpl implements IOrderService{

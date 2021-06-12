@@ -1,16 +1,8 @@
-/**
- * 
- */
-package com.cg.fds.exception;
+package com.capgemini.fds.exception;
 
-/**
- * @author advai
- *
- */
-public class CategoryNotFoundException extends RuntimeException{
-	
-	public CategoryNotFoundException(String message) {
-		super(message);
+public class CategoryNotFoundException extends RuntimeException 
+{
+	public CategoryNotFoundException(String msg) {
+		super(msg);
 	}
-
 }

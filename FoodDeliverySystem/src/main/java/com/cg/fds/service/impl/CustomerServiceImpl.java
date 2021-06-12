@@ -1,4 +1,4 @@
-package com.cg.fds.service.impl;
+package com.capgemini.fds.service.impl;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cg.fds.entities.Customer;
-import com.cg.fds.exception.CustomerNotFoundException;
-import com.cg.fds.exception.CustomerNotProvidedException;
-import com.cg.fds.repository.ICustomerRepository;
-import com.cg.fds.service.ICustomerService;
+import com.capgemini.fds.entities.Customer;
+import com.capgemini.fds.exception.CustomerNotFoundException;
+import com.capgemini.fds.exception.CustomerNotProvidedException;
+import com.capgemini.fds.repository.ICustomerRepository;
+import com.capgemini.fds.service.ICustomerService;
 import java.util.Optional;
 
 @Service
